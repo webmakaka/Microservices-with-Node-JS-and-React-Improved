@@ -1,0 +1,60 @@
+apiVersion: skaffold/v2beta11
+kind: Config
+build:
+  local:
+    push: true
+  tagPolicy:
+    sha256: {}
+  artifacts:
+    - image: webmakaka/microservices-auth
+      context: ../app/auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    # - image: webmakaka/microservices-client
+    #   context: ../app/client
+    #   docker:
+    #     dockerfile: Dockerfile
+    #   sync:
+    #     manual:
+    #       - src: '**/*.js'
+    #         dest: .
+    # - image: webmakaka/microservices-tickets
+    #   context: ../app/tickets
+    #   docker:
+    #     dockerfile: Dockerfile
+    #   sync:
+    #     manual:
+    #       - src: 'src/**/*.ts'
+    #         dest: .
+    # - image: webmakaka/microservices-orders
+    #   context: ../app/orders
+    #   docker:
+    #     dockerfile: Dockerfile
+    #   sync:
+    #     manual:
+    #       - src: 'src/**/*.ts'
+    #         dest: .
+    # - image: webmakaka/microservices-expiration
+    #   context: ../app/expiration
+    #   docker:
+    #     dockerfile: Dockerfile
+    #   sync:
+    #     manual:
+    #       - src: 'src/**/*.ts'
+    #         dest: .
+    # - image: webmakaka/microservices-payments
+    #   context: ../app/payments
+    #   docker:
+    #     dockerfile: Dockerfile
+    #   sync:
+    #     manual:
+    #       - src: 'src/**/*.ts'
+    #         dest: .
+deploy:
+  kubectl:
+    manifests:
+      - ../k8s/*.yaml

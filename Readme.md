@@ -18,12 +18,30 @@ Minikube, Kubectl, Docker, Skaffold should be installed.
 
 <br/>
 
-### Skaffold installation
+### Minikube setup
 
-    $ curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
+```
+$ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+```
 
-    $ chmod +x skaffold
-    $ sudo mv skaffold /usr/local/bin
+<br/>
+
+### Kubectl setup
+
+```
+$ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+```
+
+<br/>
+
+### Skaffold setup
+
+```
+$ curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
+
+$ chmod +x skaffold
+$ sudo mv skaffold /usr/local/bin
+```
 
 <br/>
 
@@ -51,7 +69,7 @@ $ {
 <br/>
 
     $ minikube --profile microservices-with-nodejs-and-react ip
-    172.17.0.2
+    192.168.49.2
 
 <br/>
 
@@ -61,7 +79,7 @@ $ {
 #---------------------------------------------------------------------
 # Minikube
 #---------------------------------------------------------------------
-172.17.0.2 ticketing.dev
+192.168.49.2 ticketing.dev
 ```
 
 <!--
@@ -114,6 +132,10 @@ chrome browser -> https://ticketing.dev/
 type: **thisisunsafe** in the browser window with security warning.
 
 -->
+
+<br/>
+
+### [Development](./Development.md)
 
 <br/>
 
