@@ -37,6 +37,46 @@ OK!
 
 <br/>
 
+## 07. Response Normalization Strategies
+
+<br/>
+
+    $ cd app/auth
+    $ npm install --save express-validator
+    $ npm install --save express-async-errors
+
+<br/>
+
+```
+$ curl \
+    --data '{"email":"notValidEmail", "password":"1"}' \
+    --header "Content-Type: application/json" \
+    --request POST http://ticketing.dev/api/users/signup \
+    | python -m json.tool
+```
+
+<br/>
+
+response:
+
+```
+{
+    "errors": [
+        {
+            "field": "email",
+            "message": "Email must be valid"
+        },
+        {
+            "field": "password",
+            "message": "Password must be between 4 and 20 characters"
+        }
+    ]
+}
+
+```
+
+<br/>
+
 ---
 
 <br/>

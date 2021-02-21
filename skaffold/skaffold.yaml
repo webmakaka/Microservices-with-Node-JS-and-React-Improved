@@ -3,8 +3,8 @@ kind: Config
 build:
   local:
     push: true
-  tagPolicy:
-    sha256: {}
+  # tagPolicy:
+  #   sha256: {}
   artifacts:
     - image: webmakaka/microservices-auth
       context: ../app/auth
@@ -62,6 +62,10 @@ deploy:
         recreatePods: true
         chartPath: ../k8s/helm/microservices/
         skipBuildDependencies: true
+
+        artifactOverrides:
+          auth:
+            image: webmakaka/microservices-auth
 
         imageStrategy:
           helm: {}

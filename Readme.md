@@ -2,11 +2,11 @@
 
 <br/>
 
-### [Previous Version](https://github.com/webmakaka/Microservices-with-Node-JS-and-React)
+### [Previous Version close to original](https://github.com/webmakaka/Microservices-with-Node-JS-and-React)
 
 <br/>
 
-### Here will be only project 2 from course.
+### Here we will develop only project 2 from course.
 
 <br/>
 
