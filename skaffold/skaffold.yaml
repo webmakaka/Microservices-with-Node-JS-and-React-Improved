@@ -54,18 +54,23 @@ build:
     #     manual:
     #       - src: 'src/**/*.ts'
     #         dest: .
+# deploy:
+#   helm:
+#     releases:
+#       - name: microservices-helm
+#         namespace: default
+#         recreatePods: true
+#         chartPath: ../k8s/helm/microservices/
+#         skipBuildDependencies: true
+
+#         artifactOverrides:
+#           auth:
+#             image: webmakaka/microservices-auth
+
+#         imageStrategy:
+#           helm: {}
+
 deploy:
-  helm:
-    releases:
-      - name: microservices-helm
-        namespace: default
-        recreatePods: true
-        chartPath: ../k8s/helm/microservices/
-        skipBuildDependencies: true
-
-        artifactOverrides:
-          auth:
-            image: webmakaka/microservices-auth
-
-        imageStrategy:
-          helm: {}
+  kubectl:
+    manifests:
+      - ../k8s/helm/microservices/charts/auth/templates/*

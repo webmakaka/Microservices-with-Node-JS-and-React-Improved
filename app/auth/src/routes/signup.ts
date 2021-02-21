@@ -1,7 +1,8 @@
-import { DatabaseConnectionError } from 'errors/database-connectionerror';
+import { BadRequestError } from 'errors/bad-request-error';
 import { RequestValidationError } from 'errors/request-validation-error';
 import express, { Request, Response } from 'express';
 import { body, validationResult } from 'express-validator';
+import { User } from 'models/User';
 
 const router = express.Router();
 
@@ -23,12 +24,17 @@ router.post(
 
     const { email, password } = req.body;
 
-    throw new DatabaseConnectionError();
+    const existingUser = await User.findOne({ email });
 
-    console.log('Crateing a user...');
+    if (existingUser) {
+      throw new BadRequestError('[Auth] Email in use');
+    }
 
-    return res.send({});
+    const user = User.build({ email, password });
+    await user.save();
+
+    res.status(201).send(user);
   }
 );
 
-export {router as signupRouter};
+export { router as signupRouter };

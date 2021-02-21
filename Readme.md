@@ -79,46 +79,44 @@ $ {
 192.168.49.2 ticketing.dev
 ```
 
+<br/>
+
+## How to run project in development mode (current version)
+
+<br/>
+
+```
+$ kubectl create secret generic jwt-secret --from-literal=JWT_KEY=MY_JWT_SECRET
+```
+
 <!--
-
-<br/>
-
-## How to run project
-
-<br/>
-
-    $ kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
 
     // <STRIPE_SECRET_KEY> from stripe.com
     $ kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=<STRIPE_SECRET_KEY>
 
 <br/>
 
-    $ cd 22_Back_to_the_Client
+
+-->
+
     $ cd skaffold
 
     $ docker login
 
-Need to update my docker image name webmakaka/grider-ms-app2\*\*\* to your in scripts from skaffold and k8s folders.
+Need to update my docker image name webmakaka/microservices\*\*\* to your in scripts from skaffold and k8s folders.
 
     $ skaffold dev
 
 <br/>
 
-    $ kubectl get pods
-    NAME                                           READY   STATUS    RESTARTS   AGE
-    auth-deployment-57d779fd9-48s9v                1/1     Running   0          24s
-    auth-mongo-deployment-579c6dbd8f-69jbv         1/1     Running   0          23s
-    client-deployment-f5cfc5b8d-k2lxp              1/1     Running   0          23s
-    expiration-deployment-6bb67856b4-jkkbl         1/1     Running   0          23s
-    expiration-redis-deployment-5b58b869fd-hmq5f   1/1     Running   0          23s
-    nats-deployment-76479997ff-lpss8               1/1     Running   0          23s
-    orders-deployment-5c68dff5c9-dq6hl             1/1     Running   0          23s
-    orders-mongo-deployment-6896c8b9-42vpd         1/1     Running   0          23s
-    payments-deployment-68d4c7f4ff-nfsxb           1/1     Running   0          23s
-    payments-mongo-deployment-c89cb4fc7-4ggn7      1/1     Running   0          23s
-    tickets-deployment-7b746fff9-tvhzw             1/1     Running   0          23s
-    tickets-mongo-deployment-54f456bd95-hv9fb      1/1     Running   0          22s
+```
+$ kubectl get pods
+NAME                                     READY   STATUS    RESTARTS   AGE
+auth-deployment-74496cd4f6-k2sdx         1/1     Running   0          3m43s
+auth-mongo-deployment-7b66ccc554-8tl98   1/1     Running   0          3m43s
+```
+
+<!--
 
 <br/>
 

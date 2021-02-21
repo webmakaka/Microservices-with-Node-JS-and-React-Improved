@@ -15,11 +15,11 @@ spec:
       containers:
         - name: auth
           image: webmakaka/microservices-auth
-          # env:
-          #   - name: MONGO_URI
-          #     value: 'mongodb://auth-mongo-svc:27017/auth'
-          #   - name: JWT_KEY
-          #     valueFrom:
-          #       secretKeyRef:
-          #         name: jwt-secret
-          #         key: JWT_KEY
+          env:
+            - name: MONGO_URI
+              value: 'mongodb://auth-mongo-svc:27017/auth'
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
