@@ -2,7 +2,7 @@
 
 <br/>
 
-### [Previous Version close to original](https://github.com/webmakaka/Microservices-with-Node-JS-and-React)
+### [Previous Version (close to original)](https://github.com/webmakaka/Microservices-with-Node-JS-and-React)
 
 <br/>
 
