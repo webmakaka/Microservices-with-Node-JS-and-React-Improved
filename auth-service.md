@@ -249,6 +249,30 @@ $ curl \
 
 <br/>
 
+## 10. Testing Isolated Microservices
+
+<br/>
+
+    $ cd app/auth
+    $ npm install --save-dev jest @types/jest supertest @types/supertest ts-jest mongodb-memory-server
+
+<br/>
+
+    $ npm run test
+
+<br/>
+
+**Output:**
+
+```
+Test Suites: 4 passed, 4 total
+Tests:       12 passed, 12 total
+Snapshots:   0 total
+Time:        13.794 s
+```
+
+<br/>
+
 ---
 
 <br/>
