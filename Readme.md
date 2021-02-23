@@ -99,6 +99,40 @@ $ kubectl create secret generic jwt-secret --from-literal=JWT_KEY=MY_JWT_SECRET
 
 -->
 
+<br/>
+
+/app/client/src/api
+
+Need to update baseURL.
+
+<br/>
+
+```
+$ kubectl get ingress
+NAME          CLASS    HOSTS           ADDRESS        PORTS   AGE
+ingress-svc   <none>   ticketing.dev   192.168.49.2   80      8m41s
+```
+
+<br/>
+
+Take ADDRESS and modify baseURL.
+
+<br/>
+
+baseURL should looks like:
+
+<br/>
+
+```
+192-168-49-2.kubernetes.default.svc.cluster.local
+```
+
+<br/>
+
+(more details)[./02-client-service.md]
+
+<br/>
+
     $ cd skaffold
 
     $ docker login

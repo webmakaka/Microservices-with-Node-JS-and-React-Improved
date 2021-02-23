@@ -11,8 +11,7 @@
     $ cd client
     $ npm init -y
     $ npm install react react-dom next
-    $ npm install bootstrap
-    $ npm install axios
+    $ npm install bootstrap axios
 
 <br/>
 

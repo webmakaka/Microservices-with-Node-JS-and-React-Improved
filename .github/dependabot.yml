@@ -16,3 +16,7 @@ updates:
     directory: '/app/client/'
     schedule:
       interval: 'daily'
+  - package-ecosystem: 'npm'
+    directory: '/app/common/'
+    schedule:
+      interval: 'daily'

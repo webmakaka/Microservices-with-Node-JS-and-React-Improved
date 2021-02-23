@@ -6,6 +6,8 @@
 
 ### [Client Service](./02-client-service.md)
 
+### [Shared Library](./03-shared-library.md)
+
 <br/>
 
 ---
