@@ -8,3 +8,11 @@ updates:
     directory: '/app/auth/'
     schedule:
       interval: 'daily'
+  - package-ecosystem: 'npm'
+    directory: '/app/client/'
+    schedule:
+      interval: 'daily'
+  - package-ecosystem: 'docker'
+    directory: '/app/client/'
+    schedule:
+      interval: 'daily'

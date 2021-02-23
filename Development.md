@@ -2,7 +2,9 @@
 
 <br/>
 
-### [Auth Service](./auth-service.md)
+### [Auth Service](./01-auth-service.md)
+
+### [Client Service](./02-client-service.md)
 
 <br/>
 
