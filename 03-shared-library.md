@@ -106,6 +106,13 @@ $ npm install @webmakaka/microservices-common
 
 <br/>
 
+### Updating the Common Module (if needed)
+
+    $ cd auth
+    $ npm update @webmakaka/microservices-common
+
+<br/>
+
 <!--
 <br/>
 
