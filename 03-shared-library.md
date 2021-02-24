@@ -4,6 +4,8 @@
 
 ## 12. Code Sharing and Reuse Between Services
 
+<br/>
+
     $ cd app
     $ mkdir common
     $ cd common/
@@ -22,7 +24,53 @@
 
 <br/>
 
+```
+$ npm install --save \
+    express \
+    express-validator \
+    cookie-session \
+    jsonwebtoken \
+    @types/cookie-session \
+    @types/express \
+    @types/jsonwebtoken
+```
+
+<br/>
+
     $ npm run build
+
+<br/>
+
+**If the error will occur:**
+
+```
+node_modules/@types/express/index.d.ts:58:29 - error TS2694: Namespace 'serveStatic' has no exported member 'RequestHandlerConstructor'.
+
+58     var static: serveStatic.RequestHandlerConstructor<Response>;
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Found 1 error.
+
+```
+
+<br/>
+
+**Fix it**
+
+```
+$ npm update @types/express-serve-static-core --depth 2
+$ npm update @types/serve-static --depth 2
+```
+
+<br/>
+
+**Relocating Shared Code**
+
+```
+auth/src/errors move to common/src/errors
+auth/src/middlewares move to common/src/middlewares
+```
 
 <!--
 <br/>
@@ -38,23 +86,6 @@
 
 ### 07. Relocating Shared Code
 
-```
-auth/src/errors copy to common/src/errors
-auth/src/middlewares copy to common/src/middlewares
-```
-
-<br/>
-
-```
-$ npm install --save \
-    express \
-    express-validator \
-    cookie-session \
-    jsonwebtoken \
-    @types/cookie-session \
-    @types/express \
-    @types/jsonwebtoken
-```
 
 <br/>
 

@@ -1,0 +1,40 @@
+name: Publish Package
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'app/common/**'
+# on:
+#   release:
+#     types:
+#       - published
+jobs:
+  # ci:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: '14.x'
+  #     - name: Installing packages
+  #       run: cd app/common/ && npm ci
+  #     - name: Running linter
+  #       run: npm run lint
+  publish-package:
+    runs-on: ubuntu-latest
+    # needs: ci
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+          registry-url: https://registry.npmjs.org/
+      - name: Installing packages
+        # run: cd app/common/ && npm ci
+        # run: cd app/common/ && npm version patch && npm run build
+        run: cd app/common/ && npm ci && npm update @types/express-serve-static-core --depth 2 && npm update @types/serve-static --depth 2
+      - name: Publishing Package
+        run: npm version patch && npm run build && npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}

@@ -9,11 +9,14 @@
   ],
   "scripts": {
     "clean": "del ./build/*",
-    "build": "NODE_PATH=./src npm run clean && tsc",
-    "publish": "git add . && git commit -m \"Updates\" && npm version patch && npm run build && npm publish"
+    "build": "NODE_PATH=./src npm run clean && tsc"
   },
   "keywords": [],
   "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webmakaka/Microservices-with-Node-JS-and-React-Improved.git"
+  },
   "license": "ISC",
   "devDependencies": {
     "del-cli": "^3.0.1",
