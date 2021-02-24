@@ -81,7 +81,20 @@ auth/src/middlewares move to common/src/middlewares
 
 <br/>
 
+**Publishing NodeJS Packages in Github**
+
 https://docs.github.com/en/actions/guides/publishing-nodejs-packages
+
+<br/>
+
+**Article about compiling packages with "baseUrl": "./src" params**
+
+https://mitchellsimoens.com/2019/08/07/why-typescript-paths-failed-me/
+
+<br/>
+
+**Helpful video for publishing library with Github Actions to npmjs**  
+https://www.youtube.com/watch?v=0Te32Rx2FXM
 
 <br/>
 
