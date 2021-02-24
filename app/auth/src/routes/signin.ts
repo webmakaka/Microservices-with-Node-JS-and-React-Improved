@@ -1,8 +1,10 @@
-import { BadRequestError } from 'errors/bad-request-error';
+import {
+  BadRequestError,
+  validateRequest,
+} from '@webmakaka/microservices-common';
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
 import jwt from 'jsonwebtoken';
-import { validateRequest } from 'middlewares/validate-request';
 import { User } from 'models/User';
 import { Password } from 'services/password';
 
@@ -51,4 +53,4 @@ router.post(
   }
 );
 
-export {router as signinRouter};
+export { router as signinRouter };

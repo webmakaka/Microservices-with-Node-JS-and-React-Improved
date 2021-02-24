@@ -37,6 +37,13 @@ $ npm install --save \
 
 <br/>
 
+```
+$ npm install --save-dev ttypescript
+$ npm install --save-dev @zerollup/ts-transform-paths
+```
+
+<br/>
+
     $ npm run build
 
 <br/>
@@ -71,6 +78,20 @@ $ npm update @types/serve-static --depth 2
 auth/src/errors move to common/src/errors
 auth/src/middlewares move to common/src/middlewares
 ```
+
+<br/>
+
+https://docs.github.com/en/actions/guides/publishing-nodejs-packages
+
+<br/>
+
+```
+$ cd auth
+$ npm config set @webmakaka:registry https://npm.pkg.github.com/webmakaka
+$ npm install @webmakaka/microservices-common
+```
+
+<br/>
 
 <!--
 <br/>

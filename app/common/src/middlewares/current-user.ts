@@ -1,5 +1,5 @@
-import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
+import { NextFunction, Request, Response } from 'express';
+import * as jwt from 'jsonwebtoken';
 
 interface UserPayload {
   id: string;

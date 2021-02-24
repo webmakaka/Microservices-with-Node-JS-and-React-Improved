@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "clean": "del ./build/*",
-    "build": "NODE_PATH=./src npm run clean && tsc"
+    "build": "npm run clean && ttsc"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,9 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@zerollup/ts-transform-paths": "^1.7.18",
     "del-cli": "^3.0.1",
+    "ttypescript": "^1.5.12",
     "typescript": "^4.2.2"
   },
   "dependencies": {
