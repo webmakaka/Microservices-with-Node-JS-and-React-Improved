@@ -35,6 +35,7 @@ jobs:
         # run: cd app/common/ && npm version patch && npm run build
         run: cd app/common/ && npm install && npm update @types/express-serve-static-core --depth 2 && npm update @types/serve-static --depth 2
       - name: Publishing Package
-        run: npm version patch && npm run build && npm publish
+        # && npm version patch &&
+        run: cd app/common/ npm run build && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
