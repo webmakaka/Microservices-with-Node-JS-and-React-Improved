@@ -21,10 +21,13 @@ spec:
                 name: auth-svc
                 port:
                   number: 3000
-          # - path: /api/tickets/?(.*)
-          #   backend:
-          #     serviceName: tickets-svc
-          #     servicePort: 3000
+          - path: /api/tickets/?(.*)
+            pathType: 'Prefix'
+            backend:
+              service:
+                name: tickets-svc
+                port:
+                  number: 3000
           # - path: /api/orders/?(.*)
           #   backend:
           #     serviceName: orders-svc

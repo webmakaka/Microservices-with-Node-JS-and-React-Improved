@@ -22,14 +22,14 @@ build:
         manual:
           - src: 'src/**/*.js'
             dest: .
-    # - image: webmakaka/microservices-tickets
-    #   context: ../app/tickets
-    #   docker:
-    #     dockerfile: Dockerfile
-    #   sync:
-    #     manual:
-    #       - src: 'src/**/*.ts'
-    #         dest: .
+    - image: webmakaka/microservices-tickets
+      context: ../app/tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
     # - image: webmakaka/microservices-orders
     #   context: ../app/orders
     #   docker:
@@ -75,3 +75,4 @@ deploy:
     manifests:
       - ../k8s/helm/microservices/charts/auth/templates/*
       - ../k8s/helm/microservices/charts/client/templates/*
+      - ../k8s/helm/microservices/charts/tickets/templates/*

@@ -145,11 +145,12 @@ Need to update my docker image name webmakaka/microservices\*\*\* to your in scr
 
 ```
 $ kubectl get pods
-NAME                                     READY   STATUS    RESTARTS   AGE
-auth-deployment-9d6cbbf84-f6vfj          1/1     Running   0          2m46s
-auth-mongo-deployment-6b4c967859-hxdkw   1/1     Running   0          2m46s
-client-deployment-b7945cb65-jfr88        1/1     Running   0          2m46s
-
+NAME                                        READY   STATUS    RESTARTS   AGE
+auth-deployment-6c4bfd84c4-2kq4k            1/1     Running   0          7m56s
+auth-mongo-deployment-8d75d4664-m8wf4       1/1     Running   0          7m56s
+client-deployment-7765558c9d-sfdb8          1/1     Running   0          7m56s
+tickets-deployment-644b85c646-p5xzf         1/1     Running   0          7m55s
+tickets-mongo-deployment-7d8f87b956-gjs5g   1/1     Running   0          7m55s
 ```
 
 <br/>

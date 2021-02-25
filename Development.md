@@ -8,6 +8,8 @@
 
 ### [Shared Library](./03-shared-library.md)
 
+### [Tickets Service](./04-tickets-service.md)
+
 <br/>
 
 ---

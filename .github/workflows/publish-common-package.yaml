@@ -3,8 +3,8 @@ on:
   push:
     branches:
       - main
-    # paths:
-    #   - 'app/common/**'
+    paths:
+      - 'app/common/**'
 # on:
 #   release:
 #     types:
@@ -32,11 +32,9 @@ jobs:
           registry-url: https://npm.pkg.github.com
           scope: '@webmakaka'
       - name: Installing packages
-        # run: cd app/common/ && npm ci
-        # run: cd app/common/ && npm version patch && npm run build
         run: cd app/common/ && npm install && npm update @types/express-serve-static-core --depth 2 && npm update @types/serve-static --depth 2
       - name: Publishing Package
-        # && npm version patch &&
-        run: cd app/common/ && npm run build && npm version patch && npm publish
+        # && npm version patch
+        run: cd app/common/ && npm run build && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
