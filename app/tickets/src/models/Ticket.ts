@@ -1,19 +1,19 @@
 import mongoose from 'mongoose';
 
-interface TicketAttrs {
+interface ITicketAttrs {
   title: string;
   price: number;
   userId: string;
 }
 
-interface TicketDoc extends mongoose.Document {
+interface ITicketDoc extends mongoose.Document {
   title: string;
   price: number;
   userId: string;
 }
 
-interface TicketModel extends mongoose.Model<TicketDoc> {
-  build(attrs: TicketAttrs): TicketDoc;
+interface ITicketModel extends mongoose.Model<ITicketDoc> {
+  build(attrs: ITicketAttrs): ITicketDoc;
 }
 
 const ticketSchema = new mongoose.Schema(
@@ -33,7 +33,7 @@ const ticketSchema = new mongoose.Schema(
   },
   {
     toJSON: {
-      transform(doc, ret) {
+      transform(_doc, ret) {
         ret.id = ret._id;
         delete ret._id;
       },
@@ -41,10 +41,10 @@ const ticketSchema = new mongoose.Schema(
   }
 );
 
-ticketSchema.statics.build = (attrs: TicketAttrs) => {
+ticketSchema.statics.build = (attrs: ITicketAttrs) => {
   return new Ticket(attrs);
 };
 
-const Ticket = mongoose.model<TicketDoc, TicketModel>('Ticket', ticketSchema);
+const Ticket = mongoose.model<ITicketDoc, ITicketModel>('Ticket', ticketSchema);
 
 export { Ticket };

@@ -3,7 +3,7 @@ import { NextFunction, Request, Response } from 'express';
 
 export const requireAuth = (
   req: Request,
-  res: Response,
+  _res: Response,
   next: NextFunction
 ) => {
   if (!req.currentUser) {

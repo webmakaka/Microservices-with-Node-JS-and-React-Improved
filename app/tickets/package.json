@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev src/index.ts",
+    "start": "NODE_PATH=./src ts-node-dev src/index.ts",
     "test": "jest --watchAll --no-cache"
   },
   "jest": {
