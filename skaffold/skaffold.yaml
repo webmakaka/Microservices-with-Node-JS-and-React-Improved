@@ -76,3 +76,4 @@ deploy:
       - ../k8s/helm/microservices/charts/auth/templates/*
       - ../k8s/helm/microservices/charts/client/templates/*
       - ../k8s/helm/microservices/charts/tickets/templates/*
+      - ../k8s/helm/microservices/charts/nats/templates/*

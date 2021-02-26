@@ -10,6 +10,8 @@
 
 ### [Tickets Service](./04-tickets-service.md)
 
+### [Messaging (NATS Streaming Server) Service](./05-messaging.md)
+
 <br/>
 
 ---
