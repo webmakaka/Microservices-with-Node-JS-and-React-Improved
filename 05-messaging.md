@@ -59,6 +59,26 @@ tickets-mongo-deployment-869f7b4c75-9q48f   1/1     Running   0          109m
 
 <br/>
 
+### 15. Connecting to NATS in a Node JS World
+
+    $ cd common
+    $ npm install --save node-nats-streaming
+    $ npm version patch
+
+<br/>
+
+push sources to github
+
+<br/>
+
+    $ cd tickets/
+    $ ncu -u
+
+    $ cd nats-test/
+    $ npm install @webmakaka/microservices-common
+
+<br/>
+
 ---
 
 <br/>
