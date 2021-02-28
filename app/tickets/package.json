@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_PATH=./src ts-node-dev src/index.ts",
-    "test": "jest --watchAll --no-cache"
+    "test": "NODE_PATH=./src jest --watchAll --no-cache"
   },
   "jest": {
     "preset": "ts-jest",
@@ -22,7 +22,7 @@
     "@types/express": "^4.17.11",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mongoose": "^5.10.3",
-    "@webmakaka/microservices-common": "^1.0.1",
+    "@webmakaka/microservices-common": "^1.0.2",
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",

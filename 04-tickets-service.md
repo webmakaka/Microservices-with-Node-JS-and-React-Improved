@@ -127,7 +127,7 @@ $ curl \
     --cookie /tmp/cookies.txt \
     --data '{"title":"new concert", "price":100}' \
     --header "Content-Type: application/json" \
-    --request PUT https://ticketing.dev/api/tickets/6037eaacbcc4a0001acb6d50 \
+    --request PUT https://ticketing.dev/api/tickets/603b0e8036b9f80019154277 \
     | python -m json.tool
 ```
 

@@ -108,47 +108,12 @@ $ npm install @webmakaka/microservices-common
 
 ### Updating the Common Module (if needed)
 
-    $ cd auth
-    $ npm update @webmakaka/microservices-common
-
 <br/>
 
-<!--
-<br/>
-
-### 06. An Easy Publish Command
-
-<br/>
-
-    $ npm version patch
-    $ npm run build
-
-<br/>
-
-### 07. Relocating Shared Code
-
-
-<br/>
-
-    $ tsc
-
-<br/>
-
-    $ npm run publish
-
-<br/>
-
-### 08. Updating Import Statements
-
-    $ cd auth
-    $ npm install --save @grider-ms-tickets/common
-
-<br/>
-
-### 09. Updating the Common Module
-
-    $ cd auth
-    $ npm update @grider-ms-tickets/common -->
+```
+$ cd auth
+$ ncu -u
+```
 
 <br/>
 

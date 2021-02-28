@@ -71,11 +71,93 @@ push sources to github
 
 <br/>
 
-    $ cd tickets/
-    $ ncu -u
+```
+$ cd tickets/
+$ ncu -u
+$ npm update @webmakaka/microservices-common
+```
 
-    $ cd nats-test/
-    $ npm install @webmakaka/microservices-common
+<br/>
+
+```
+$ cd nats-test/
+$ npm config set @webmakaka:registry https://npm.pkg.github.com/webmakaka
+$ npm install @webmakaka/microservices-common
+```
+
+<br/>
+
+### 16. Managing a NATS Client
+
+<br/>
+
+    $ kubectl port-forward nats-deployment-7d9dfd65d9-jjhgq 4222:4222
+    $ cd app/nats-test
+    $ npm run listen
+
+<br/>
+
+```
+// CREATE TICKET
+```
+
+<br/>
+
+**returns:**
+
+```
+***
+[tickets] Event published to subject ticket:created
+***
+```
+
+<br/>
+
+```
+Listener connected to NATS
+Message received: ticket:created / payments-service
+Event data!  {
+  id: '603b0e8036b9f80019154277',
+  title: 'concert',
+  price: 10,
+  userId: '603b06996ed60700194e7eee'
+}
+```
+
+<br/>
+
+```
+// UPDATE TICKET
+```
+
+<br/>
+
+**returns:**
+
+```
+***
+[tickets] Event published to subject ticket:updated
+***
+```
+
+<br/>
+
+**Run Tests:**
+
+    $ cd tickets
+    $ npm run test
+
+<br/>
+
+**returns:**
+
+```
+Test Suites: 4 passed, 4 total
+Tests:       16 passed, 16 total
+Snapshots:   0 total
+Time:        14.75 s
+Ran all test suites.
+```
 
 <br/>
 

@@ -1,4 +1,5 @@
 import {
+  AListener,
   ESubjects,
   ITicketCreatedEvent,
 } from '@webmakaka/microservices-common';
