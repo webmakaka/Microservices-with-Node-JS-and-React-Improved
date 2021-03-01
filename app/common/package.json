@@ -1,7 +1,7 @@
 {
   "name": "@webmakaka/microservices-common",
   "version": "1.0.3",
-  "description": "common",
+  "description": "microservices-common attempt 002",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "files": [

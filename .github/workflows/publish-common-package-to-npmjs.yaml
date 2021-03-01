@@ -26,7 +26,7 @@ jobs:
     # needs: ci
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: '14.x'
           registry-url: https://registry.npmjs.org
@@ -35,6 +35,10 @@ jobs:
         run: cd app/common/ && npm install && npm update @types/express-serve-static-core --depth 2 && npm update @types/serve-static --depth 2
       - name: Publishing Package
         # && npm version patch
-        run: cd app/common/ && npm run build && npm publish --access=public
+        run: |
+          cd app/common/ 
+          npm run build 
+          npm config set //registry.npmjs.org/:_authToken ${NPMJS_AUTH_TOKEN}
+          npm publish --access=public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_AUTH_TOKEN }}
+          NPMJS_AUTH_TOKEN: ${{ secrets.NPMJS_AUTH_TOKEN }}
