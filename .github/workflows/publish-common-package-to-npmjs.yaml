@@ -32,13 +32,16 @@ jobs:
           registry-url: https://registry.npmjs.org
           scope: '@webmak'
       - name: Installing packages
-        run: cd app/common/ && npm install && npm update @types/express-serve-static-core --depth 2 && npm update @types/serve-static --depth 2
+        run: |
+          cd app/common/ 
+          npm install 
+          npm update @types/express-serve-static-core --depth 2 
+          npm update @types/serve-static --depth 2
       - name: Publishing Package
         # && npm version patch
         run: |
           cd app/common/ 
           npm run build 
-          npm config set //registry.npmjs.org/:_authToken ${NPMJS_AUTH_TOKEN}
           npm publish --access=public
         env:
-          NPMJS_AUTH_TOKEN: ${{ secrets.NPMJS_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_AUTH_TOKEN }}

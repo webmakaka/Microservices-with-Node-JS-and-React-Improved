@@ -32,9 +32,17 @@ jobs:
           registry-url: https://npm.pkg.github.com
           scope: '@webmakaka'
       - name: Installing packages
-        run: cd app/common/ && npm install && npm update @types/express-serve-static-core --depth 2 && npm update @types/serve-static --depth 2
+        #run: cd app/common/ && npm install && npm update @types/express-serve-static-core --depth 2 && npm update @types/serve-static --depth 2
+        run: |
+          cd app/common/ 
+          npm install
+          npm update @types/express-serve-static-core --depth 2 
+          npm update @types/serve-static --depth 2
       - name: Publishing Package
         # && npm version patch
-        run: cd app/common/ && npm run build && npm publish
+        run: |
+          cd app/common/ 
+          npm run build 
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
