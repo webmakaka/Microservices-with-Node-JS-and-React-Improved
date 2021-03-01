@@ -44,6 +44,7 @@ ticketSchema.statics.build = (attrs: ITicketAttrs) => {
 
 ticketSchema.methods.isReserved = async function () {
   const existingOrder = await Order.findOne({
+    // @ts-ignore: Unreachable code error
     ticket: this,
     status: {
       $in: [

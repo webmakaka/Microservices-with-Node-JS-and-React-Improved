@@ -3,8 +3,10 @@ import {
   NotFoundError,
   requireAuth,
 } from '@webmak/microservices-common';
+import { OrderCancelledPublisher } from 'events/publishers/OrderCancelledPublisher';
 import express, { Request, Response } from 'express';
 import { EOrderStatus, Order } from 'models/Order';
+import { natsWrapper } from 'NatsWrapper';
 
 const router = express.Router();
 
@@ -12,7 +14,7 @@ router.delete(
   '/api/orders/:orderId',
   requireAuth,
   async (req: Request, res: Response) => {
-    const order = await Order.findById(req.params.orderId);
+    const order = await Order.findById(req.params.orderId).populate('ticket');
 
     if (!order) {
       throw new NotFoundError();
@@ -24,6 +26,13 @@ router.delete(
 
     order.status = EOrderStatus.Cancelled;
     await order.save();
+
+    new OrderCancelledPublisher(natsWrapper.client).publish({
+      id: order.id,
+      ticket: {
+        id: order.ticket.id,
+      },
+    });
 
     return res.status(204).send(order);
   }

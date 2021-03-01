@@ -20,10 +20,24 @@ $ npm version patch
 ```
 $ cd orders/
 $ npm install @webmak/microservices-common
-$ ncu -u
-$ npm install
 $ npm run test
 ```
+
+<br/>
+
+**returns:**
+
+```
+Test Suites: 4 passed, 4 total
+Tests:       2 todo, 7 passed, 9 total
+Snapshots:   0 total
+Time:        14.434 s
+Ran all test suites.
+```
+
+<br/>
+
+### 18. Understanding Event Flow
 
 <br/>
 

@@ -7,6 +7,8 @@ export * from 'errors/request-validation-error';
 export * from 'events/AListener';
 export * from 'events/APublisher';
 export * from 'events/ESubjects';
+export * from 'events/IOrderCancelledEvent';
+export * from 'events/IOrderCreatedEvent';
 export * from 'events/ITicketCreatedEvent';
 export * from 'events/ITicketUpdatedEvent';
 export * from 'events/types/EOrderStatus';
