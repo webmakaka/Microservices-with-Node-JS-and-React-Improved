@@ -32,7 +32,11 @@ updates:
     directory: '/app/nats-test/'
     schedule:
       interval: 'daily'
-  # - package-ecosystem: 'docker'
-  #   directory: '/app/nats-test/'
-  #   schedule:
-  #     interval: 'daily'
+  - package-ecosystem: 'npm'
+    directory: '/app/orders/'
+    schedule:
+      interval: 'daily'
+  - package-ecosystem: 'docker'
+    directory: '/app/orders/'
+    schedule:
+      interval: 'daily'

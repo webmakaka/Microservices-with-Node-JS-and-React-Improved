@@ -1,0 +1,40 @@
+name: Publish Package to GitHub
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'app/common/**'
+# on:
+#   release:
+#     types:
+#       - published
+jobs:
+  # ci:
+  #   runs-on: Ubuntu-20.04
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: '14.x'
+  #     - name: Installing packages
+  #       run: cd app/common/ && npm ci
+  #     - name: Running linter
+  #       run: npm run lint
+  publish-package:
+    runs-on: Ubuntu-20.04
+    # needs: ci
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+          registry-url: https://npm.pkg.github.com
+          scope: '@webmakaka'
+      - name: Installing packages
+        run: cd app/common/ && npm install && npm update @types/express-serve-static-core --depth 2 && npm update @types/serve-static --depth 2
+      - name: Publishing Package
+        # && npm version patch
+        run: cd app/common/ && npm run build && npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}

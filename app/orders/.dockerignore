@@ -1,0 +1,17 @@
+**/.eslintignore
+**/.eslintrc
+**/.prettierignore
+**/.prettierrc
+
+**/node_modules/
+**/node_modules_linux/
+**/Dockerfile
+**/.dockerignore
+**/.gitignore
+**/.git
+**/README.md
+**/LICENSE
+**/.vscode
+
+**/test/
+**/.next/

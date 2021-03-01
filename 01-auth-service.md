@@ -2,7 +2,11 @@
 
 <br/>
 
-## 05. Architecture of Multi-Service Apps
+## Auth Service
+
+<br/>
+
+### 05. Architecture of Multi-Service Apps
 
 <br/>
 

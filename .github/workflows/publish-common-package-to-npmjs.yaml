@@ -1,4 +1,4 @@
-name: Publish Package
+name: Publish Package to NpmJS
 on:
   push:
     branches:
@@ -29,12 +29,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-          registry-url: https://npm.pkg.github.com
-          scope: '@webmakaka'
+          registry-url: https://registry.npmjs.org
+          scope: '@webmak'
       - name: Installing packages
         run: cd app/common/ && npm install && npm update @types/express-serve-static-core --depth 2 && npm update @types/serve-static --depth 2
       - name: Publishing Package
         # && npm version patch
         run: cd app/common/ && npm run build && npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_AUTH_TOKEN }}

@@ -12,6 +12,8 @@
 
 ### [Messaging (NATS Streaming Server) Service](./05-messaging.md)
 
+### [Orders Service](./06-orders-service.md)
+
 <br/>
 
 ---

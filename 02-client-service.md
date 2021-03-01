@@ -2,7 +2,11 @@
 
 <br/>
 
-## 11. Integrating a Server-Side-Rendered React App
+## Client Service
+
+<br/>
+
+### 11. Integrating a Server-Side-Rendered React App
 
 <br/>
 

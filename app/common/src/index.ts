@@ -9,6 +9,7 @@ export * from 'events/APublisher';
 export * from 'events/ESubjects';
 export * from 'events/ITicketCreatedEvent';
 export * from 'events/ITicketUpdatedEvent';
+export * from 'events/types/EOrderStatus';
 export * from 'middlewares/current-user';
 export * from 'middlewares/error-handler';
 export * from 'middlewares/require-auth';

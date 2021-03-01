@@ -30,14 +30,14 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    # - image: webmakaka/microservices-orders
-    #   context: ../app/orders
-    #   docker:
-    #     dockerfile: Dockerfile
-    #   sync:
-    #     manual:
-    #       - src: 'src/**/*.ts'
-    #         dest: .
+    - image: webmakaka/microservices-orders
+      context: ../app/orders
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
     # - image: webmakaka/microservices-expiration
     #   context: ../app/expiration
     #   docker:
@@ -77,3 +77,4 @@ deploy:
       - ../k8s/helm/microservices/charts/client/templates/*
       - ../k8s/helm/microservices/charts/tickets/templates/*
       - ../k8s/helm/microservices/charts/nats/templates/*
+      - ../k8s/helm/microservices/charts/orders/templates/*
