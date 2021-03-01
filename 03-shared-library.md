@@ -102,10 +102,20 @@ https://www.youtube.com/watch?v=0Te32Rx2FXM
 
 <br/>
 
+<!--
+
 ```
 $ cd auth
 $ npm config set @webmakaka:registry https://npm.pkg.github.com/webmakaka
 $ npm install @webmakaka/microservices-common
+```
+
+-->
+
+```
+$ cd auth
+$ npm config set @webmakaka:registry https://npm.pkg.github.com/webmakaka
+$ npm install @webmak/microservices-common
 ```
 
 <br/>

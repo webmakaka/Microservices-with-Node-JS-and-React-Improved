@@ -2,7 +2,7 @@ import {
   NotAuthorizedError,
   NotFoundError,
   requireAuth,
-} from '@webmakaka/microservices-common';
+} from '@webmak/microservices-common';
 import express, { Request, Response } from 'express';
 import { Order } from 'models/Order';
 

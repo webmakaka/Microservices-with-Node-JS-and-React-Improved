@@ -1,4 +1,4 @@
-import { currentUser } from '@webmakaka/microservices-common';
+import { currentUser } from '@webmak/microservices-common';
 import express from 'express';
 
 const router = express.Router();

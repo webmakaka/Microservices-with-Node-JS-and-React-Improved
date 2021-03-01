@@ -1,4 +1,4 @@
-import { EOrderStatus } from '@webmakaka/microservices-common';
+import { EOrderStatus } from '@webmak/microservices-common';
 import { ITicketDoc } from 'models/Ticket';
 import mongoose from 'mongoose';
 

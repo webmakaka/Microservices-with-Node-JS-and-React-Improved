@@ -74,16 +74,22 @@ push sources to github
 ```
 $ cd tickets/
 $ ncu -u
-$ npm update @webmakaka/microservices-common
+$ npm update @webmak/microservices-common
 ```
 
 <br/>
 
 ```
 $ cd nats-test/
+$ npm install @webmak/microservices-common
+```
+
+<!--
+
 $ npm config set @webmakaka:registry https://npm.pkg.github.com/webmakaka
 $ npm install @webmakaka/microservices-common
-```
+
+-->
 
 <br/>
 

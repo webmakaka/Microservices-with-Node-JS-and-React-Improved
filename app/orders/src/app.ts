@@ -2,7 +2,7 @@ import {
   currentUser,
   errorHandler,
   NotFoundError,
-} from '@webmakaka/microservices-common';
+} from '@webmak/microservices-common';
 import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 import express from 'express';

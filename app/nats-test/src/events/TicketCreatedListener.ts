@@ -2,7 +2,7 @@ import {
   AListener,
   ESubjects,
   ITicketCreatedEvent,
-} from '@webmakaka/microservices-common';
+} from '@webmak/microservices-common';
 import { Message } from 'node-nats-streaming';
 
 export class TicketCreatedListener extends AListener<ITicketCreatedEvent> {

@@ -1,4 +1,4 @@
-import { requireAuth } from '@webmakaka/microservices-common';
+import { requireAuth } from '@webmak/microservices-common';
 import express, { Request, Response } from 'express';
 import { Order } from 'models/Order';
 

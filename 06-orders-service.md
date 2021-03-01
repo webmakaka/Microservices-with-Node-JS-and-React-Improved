@@ -19,8 +19,7 @@ $ npm version patch
 
 ```
 $ cd orders/
-$ npm config set @webmakaka:registry https://npm.pkg.github.com/webmakaka
-$ npm install @webmakaka/microservices-common
+$ npm install @webmak/microservices-common
 $ ncu -u
 $ npm install
 $ npm run test

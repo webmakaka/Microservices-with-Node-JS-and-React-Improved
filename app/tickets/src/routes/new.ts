@@ -1,4 +1,4 @@
-import { requireAuth, validateRequest } from '@webmakaka/microservices-common';
+import { requireAuth, validateRequest } from '@webmak/microservices-common';
 import { TicketCreatedPublisher } from 'events/publishers/TicketCreatedPublisher';
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';

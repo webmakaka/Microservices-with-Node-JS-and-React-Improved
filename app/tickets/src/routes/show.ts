@@ -1,4 +1,4 @@
-import { NotFoundError } from '@webmakaka/microservices-common';
+import { NotFoundError } from '@webmak/microservices-common';
 import express, { Request, Response } from 'express';
 import { Ticket } from 'models/Ticket';
 

@@ -1,4 +1,4 @@
-import { errorHandler, NotFoundError } from '@webmakaka/microservices-common';
+import { errorHandler, NotFoundError } from '@webmak/microservices-common';
 import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 import express, { Request, Response } from 'express';

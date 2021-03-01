@@ -1,7 +1,4 @@
-import {
-  BadRequestError,
-  validateRequest,
-} from '@webmakaka/microservices-common';
+import { BadRequestError, validateRequest } from '@webmak/microservices-common';
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
 import jwt from 'jsonwebtoken';
