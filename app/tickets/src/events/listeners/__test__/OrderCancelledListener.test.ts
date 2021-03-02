@@ -6,6 +6,7 @@ import { Message } from 'node-nats-streaming';
 import { natsWrapper } from '__mocks__//NatsWrapper';
 
 const setup = async () => {
+  // @ts-ignore
   const listener = new OrderCancelledListener(natsWrapper.client);
 
   const orderId = mongoose.Types.ObjectId().toHexString();

@@ -92,6 +92,10 @@ $ npm run test
 
 <br/>
 
+All Tests are OK!
+
+<br/>
+
 ---
 
 <br/>
