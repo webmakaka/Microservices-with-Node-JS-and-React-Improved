@@ -1,4 +1,5 @@
 import { app } from 'app';
+import { Ticket } from 'models/Ticket';
 import mongoose from 'mongoose';
 import request from 'supertest';
 import { natsWrapper } from '__mocks__/NatsWrapper';
@@ -130,4 +131,30 @@ it('publishes an event', async () => {
     .expect(200);
 
   expect(natsWrapper.client.publish).toHaveBeenCalled();
+});
+
+it('rejects updated if the ticket is reserved', async () => {
+  const cookie = global.signin();
+
+  const response = await request(app)
+    .post('/api/tickets')
+    .set('Cookie', cookie)
+    .send({
+      title: 'aslkdfj',
+      price: 20,
+    })
+    .expect(201);
+
+  const ticket = await Ticket.findById(response.body.id);
+  ticket!.set({ orderId: mongoose.Types.ObjectId().toHexString() });
+  await ticket!.save();
+
+  await request(app)
+    .put(`/api/tickets/${response.body.id}`)
+    .set('Cookie', cookie)
+    .send({
+      title: 'new title',
+      price: 100,
+    })
+    .expect(400);
 });

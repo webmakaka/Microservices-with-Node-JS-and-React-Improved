@@ -38,9 +38,9 @@ jobs:
           npm update @types/express-serve-static-core --depth 2 
           npm update @types/serve-static --depth 2
       - name: Publishing Package
-        # && npm version patch
         run: |
           cd app/common/ 
+          npm version patch
           npm run build 
           npm publish --access=public
         env:

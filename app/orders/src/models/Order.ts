@@ -1,6 +1,7 @@
 import { EOrderStatus } from '@webmak/microservices-common';
 import { ITicketDoc } from 'models/Ticket';
 import mongoose from 'mongoose';
+import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
 
 interface IOrderAttrs {
   userId: string;
@@ -14,6 +15,7 @@ interface IOrderDoc extends mongoose.Document {
   status: EOrderStatus;
   expiresAt: Date;
   ticket: ITicketDoc;
+  version: number;
 }
 
 interface IOrderModel extends mongoose.Model<IOrderDoc> {
@@ -49,6 +51,9 @@ const orderSchema = new mongoose.Schema(
     },
   }
 );
+
+orderSchema.set('versionKey', 'version');
+orderSchema.plugin(updateIfCurrentPlugin);
 
 orderSchema.statics.build = (attrs: IOrderAttrs) => {
   return new Order(attrs);

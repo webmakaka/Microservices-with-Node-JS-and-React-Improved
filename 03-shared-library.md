@@ -114,7 +114,6 @@ $ npm install @webmakaka/microservices-common
 
 ```
 $ cd auth
-$ npm config set @webmakaka:registry https://npm.pkg.github.com/webmakaka
 $ npm install @webmak/microservices-common
 ```
 

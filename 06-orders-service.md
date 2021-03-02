@@ -41,6 +41,57 @@ Ran all test suites.
 
 <br/>
 
+```
+$ cd common
+$ npm version patch
+```
+
+**push changes to github**
+
+```
+$ cd orders/
+$ npm install @webmak/microservices-common
+$ npm run test
+```
+
+<br/>
+
+### 19. Listening for Events and Handling Concurrency Issues
+
+<br/>
+
+    $ cd tickets
+    $ npm install --save mongoose-update-if-current
+
+    $ cd orders
+    $ npm install --save mongoose-update-if-current
+
+<br/>
+
+**push changes to github**
+
+<br/>
+
+    $ cd orders
+    $ npm update @webmak/microservices-common
+
+<br/>
+
+    $ cd tickets
+    $ npm update @webmak/microservices-common
+
+<br/>
+
+    $ cd tickets
+    $ npm run test
+
+<br/>
+
+    $ cd orders
+    $ npm run test
+
+<br/>
+
 ---
 
 <br/>
