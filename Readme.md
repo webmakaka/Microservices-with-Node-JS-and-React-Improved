@@ -149,15 +149,17 @@ Need to update my docker image name webmakaka/microservices\*\*\* to your in scr
 
 ```
 $ kubectl get pods
-NAME                                       READY   STATUS    RESTARTS   AGE
-auth-deployment-5c7c5c99cb-wtljg           1/1     Running   0          2m57s
-auth-mongo-deployment-7f49f7bc8-rg84s      1/1     Running   0          2m57s
-client-deployment-7dfc79cf88-8h5zj         1/1     Running   0          2m57s
-nats-deployment-66bb4cd9d6-cxrgj           1/1     Running   0          2m57s
-orders-deployment-64f5d9d948-jnwkj         1/1     Running   0          2m57s
-orders-mongo-deployment-868c6c876-zsftr    1/1     Running   0          2m57s
-tickets-deployment-c6bdd866b-fcp52         1/1     Running   0          2m57s
-tickets-mongo-deployment-f49f67f66-4jvlq   1/1     Running   0          2m57s
+NAME                                           READY   STATUS    RESTARTS   AGE
+auth-deployment-7449958bb9-h6dg8               1/1     Running   0          6m1s
+auth-mongo-deployment-78b8bb6485-c4zhn         1/1     Running   0          6m1s
+client-deployment-987955d46-vdnbm              1/1     Running   0          6m1s
+expiration-deployment-69c859448b-s6sxh         1/1     Running   0          6m
+expiration-redis-deployment-86595f5966-hk9m6   1/1     Running   0          6m
+nats-deployment-85b984b55f-54lj5               1/1     Running   0          6m1s
+orders-deployment-68845dc6b7-gtwv4             1/1     Running   0          6m1s
+orders-mongo-deployment-56f88ccf79-hknr2       1/1     Running   0          6m1s
+tickets-deployment-58874789d4-vv9fc            1/1     Running   0          6m1s
+tickets-mongo-deployment-5f4956cd4c-bmj69      1/1     Running   0          6m1s
 
 ```
 
@@ -262,7 +264,7 @@ $ curl \
 $ curl \
     --insecure \
     --cookie /tmp/cookies.txt \
-    --data '{"ticketId":"603b0e8036b9f80019154277"}' \
+    --data '{"ticketId":"603f00452d76c800181b6074"}' \
     --header "Content-Type: application/json" \
     --request POST https://ticketing.dev/api/orders \
     | python -m json.tool

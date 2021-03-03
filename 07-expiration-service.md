@@ -41,6 +41,19 @@
 
 <br/>
 
+**After 15 minutes:**
+
+```
+[expiration] Event published to subject expiration:complete
+[orders] Message received: expiration:complete / orders-service
+[orders] Event published to subject order:cancelled
+[tickets] Message received: order:cancelled / tickets-service
+[tickets] Event published to subject ticket:updated
+[orders] Message received: ticket:updated / orders-service
+```
+
+<br/>
+
 ---
 
 <br/>
