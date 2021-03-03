@@ -1,8 +1,8 @@
 apiVersion: skaffold/v2beta12
 kind: Config
 build:
-  local:
-    push: true
+  # local:
+  #   push: true
   # tagPolicy:
   #   sha256: {}
   artifacts:
@@ -38,14 +38,14 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    # - image: webmakaka/microservices-expiration
-    #   context: ../app/expiration
-    #   docker:
-    #     dockerfile: Dockerfile
-    #   sync:
-    #     manual:
-    #       - src: 'src/**/*.ts'
-    #         dest: .
+    - image: webmakaka/microservices-expiration
+      context: ../app/expiration
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
     # - image: webmakaka/microservices-payments
     #   context: ../app/payments
     #   docker:
@@ -78,3 +78,4 @@ deploy:
       - ../k8s/helm/microservices/charts/tickets/templates/*
       - ../k8s/helm/microservices/charts/nats/templates/*
       - ../k8s/helm/microservices/charts/orders/templates/*
+      - ../k8s/helm/microservices/charts/expiration/templates/*

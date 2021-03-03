@@ -14,6 +14,8 @@
 
 ### [Orders Service](./06-orders-service.md)
 
+### [Expiration Service](./07-expiration-service.md)
+
 <br/>
 
 ---

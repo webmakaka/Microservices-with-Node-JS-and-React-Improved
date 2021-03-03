@@ -24,7 +24,7 @@
     "@types/express": "^4.17.11",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mongoose": "^5.10.3",
-    "@webmak/microservices-common": "^1.0.4",
+    "@webmak/microservices-common": "^1.0.5",
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
