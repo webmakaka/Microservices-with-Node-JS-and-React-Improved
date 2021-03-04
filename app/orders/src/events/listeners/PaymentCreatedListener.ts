@@ -2,18 +2,18 @@ import {
   AListener,
   EOrderStatus,
   ESubjects,
-  PaymentCreatedEventInteface,
+  IPaymentCreatedEvent,
 } from '@webmak/microservices-common';
 import { queueGroupName } from 'events/listeners/queueGroupName';
 import { Order } from 'models/Order';
 import { Message } from 'node-nats-streaming';
 
-export class PaymentCreatedListener extends AListener<PaymentCreatedEventInteface> {
+export class PaymentCreatedListener extends AListener<IPaymentCreatedEvent> {
   subject: ESubjects.PaymentCreated = ESubjects.PaymentCreated;
 
   queueGroupName = queueGroupName;
 
-  async onMessage(data: PaymentCreatedEventInteface['data'], msg: Message) {
+  async onMessage(data: IPaymentCreatedEvent['data'], msg: Message) {
     const order = await Order.findById(data.orderId);
 
     if (!order) {

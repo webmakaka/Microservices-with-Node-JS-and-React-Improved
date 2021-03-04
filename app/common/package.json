@@ -1,5 +1,5 @@
 {
-  "name": "@webmak/microservices-common",
+  "name": "@webmakaka/microservices-common",
   "version": "1.0.5",
   "description": "microservices-common",
   "main": "./build/index.js",

@@ -91,7 +91,7 @@ $ kubectl create secret generic jwt-secret --from-literal=JWT_KEY=MY_JWT_SECRET
 
 <br/>
 
-stripe.com
+**stripe.com**
 
 Developers --> API keys
 
@@ -101,6 +101,12 @@ Developers --> API keys
 // <STRIPE_SECRET_KEY> from stripe.com
 $ kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=<STRIPE_SECRET_KEY>
 ```
+
+<br/>
+
+app/client/src/pages/orders/[orderId].js
+
+Set your **stripeKey** (stripe public key) instead mine.
 
 <br/>
 
@@ -240,7 +246,7 @@ $ curl \
 <br/>
 
 ```
-// GET ALL TICKET
+// GET ALL TICKETS
 $ curl \
     --insecure \
     --header "Content-Type: application/json" \
@@ -268,9 +274,33 @@ $ curl \
 $ curl \
     --insecure \
     --cookie /tmp/cookies.txt \
-    --data '{"ticketId":"603f00452d76c800181b6074"}' \
+    --data '{"ticketId":"604150ce9a43b7001a54b720"}' \
     --header "Content-Type: application/json" \
     --request POST https://ticketing.dev/api/orders \
+    | python -m json.tool
+```
+
+<br/>
+
+```
+// GET ALL ORDERS
+$ curl \
+    --insecure \
+    --cookie /tmp/cookies.txt \
+    --header "Content-Type: application/json" \
+    --request GET https://ticketing.dev/api/orders \
+    | python -m json.tool
+```
+
+<br/>
+
+```
+// GET SINGLE ORDER
+$ curl \
+    --insecure \
+    --cookie /tmp/cookies.txt \
+    --header "Content-Type: application/json" \
+    --request GET https://ticketing.dev/api/orders/604150e7d42b880019802e99 \
     | python -m json.tool
 ```
 

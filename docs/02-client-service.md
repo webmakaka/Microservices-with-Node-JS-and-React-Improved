@@ -114,6 +114,27 @@ $ kubectl exec -i -t dnsutils -- nslookup ingress-svc
 
 <br/>
 
+### 22. Back to the Client
+
+```
+$ cd client
+$ npm install react-stripe-checkout
+```
+
+<br/>
+
+**Testing card**
+
+https://stripe.com/docs/testing
+
+<br/>
+
+4242 4242 4242 4242
+
+- Any 3 digits
+
+<br/>
+
 ---
 
 <br/>
