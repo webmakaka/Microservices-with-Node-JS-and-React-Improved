@@ -1,0 +1,25 @@
+name: deploy-expiration
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'app/expiration/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd app/expiration && docker build -t webmakaka/microservices-expiration .
+      - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        env:
+          DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      - run: docker push webmakaka/microservices-expiration
+      # - uses: digitalocean/actions-doctl@v2
+      #   with:
+      #     token: ${{secretes.DIGITAL_OCEAN_ACCESS_TOKEN}}
+      # - run: doctl kubernetes cluster kubeconfig save <kubernetes_cluster_name>
+      # - run: kubectl rollout restart deployment expiration-depl

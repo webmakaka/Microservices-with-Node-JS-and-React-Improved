@@ -1,0 +1,13 @@
+name: tests-payments
+
+on:
+  push:
+    paths:
+      - 'app/payments/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd app/payments && npm install && npm run test:ci

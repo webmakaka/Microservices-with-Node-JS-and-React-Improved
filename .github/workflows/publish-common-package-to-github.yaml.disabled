@@ -42,6 +42,7 @@ jobs:
         # && npm version patch
         run: |
           cd app/common/ 
+          npm version patch
           npm run build 
           npm publish
         env:

@@ -1,0 +1,13 @@
+name: tests-auth
+
+on:
+  push:
+    paths:
+      - 'app/auth/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd app/auth && npm install && npm run test:ci

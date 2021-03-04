@@ -1,0 +1,13 @@
+name: tests-tickets
+
+on:
+  push:
+    paths:
+      - 'app/tickets/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd app/tickets && npm install && npm run test:ci
