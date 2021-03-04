@@ -6,6 +6,7 @@
   "scripts": {
     "start": "NODE_PATH=./src ts-node-dev src/index.ts",
     "test": "NODE_PATH=./src jest --watchAll --no-cache",
+    "test:ci": "NODE_PATH=./src jest",
     "lint": "eslint src --ext .js,.ts,.jsx,.tsx",
     "precommit": "lint-staged"
   },

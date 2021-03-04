@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_PATH=./src ts-node-dev src/index.ts",
-    "test": "NODE_PATH=./src jest --watchAll --no-cache"
+    "test": "NODE_PATH=./src jest --watchAll --no-cache",
+    "test:ci": "NODE_PATH=./src jest"
   },
   "jest": {
     "preset": "ts-jest",
