@@ -4,7 +4,7 @@ import {
   ESubjects,
   IOrderCancelledEvent,
 } from '@webmak/microservices-common';
-import { queueGroupName } from 'events/queueGroupName';
+import { queueGroupName } from 'events/listeners/queueGroupName';
 import { Order } from 'models/Order';
 import { Message } from 'node-nats-streaming';
 

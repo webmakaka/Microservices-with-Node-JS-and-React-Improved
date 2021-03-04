@@ -25,6 +25,10 @@ const start = async () => {
     throw new Error('[Payments] NATS_URL must be defined');
   }
 
+  if (!process.env.STRIPE_KEY) {
+    throw new Error('[Payments] STRIPE_KEY must be defined');
+  }
+
   try {
     await natsWrapper.connect(
       process.env.NATS_CLUSTER_ID,

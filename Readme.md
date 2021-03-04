@@ -153,17 +153,18 @@ Need to update my docker image name webmakaka/microservices\*\*\* to your in scr
 ```
 $ kubectl get pods
 NAME                                           READY   STATUS    RESTARTS   AGE
-auth-deployment-7449958bb9-h6dg8               1/1     Running   0          6m1s
-auth-mongo-deployment-78b8bb6485-c4zhn         1/1     Running   0          6m1s
-client-deployment-987955d46-vdnbm              1/1     Running   0          6m1s
-expiration-deployment-69c859448b-s6sxh         1/1     Running   0          6m
-expiration-redis-deployment-86595f5966-hk9m6   1/1     Running   0          6m
-nats-deployment-85b984b55f-54lj5               1/1     Running   0          6m1s
-orders-deployment-68845dc6b7-gtwv4             1/1     Running   0          6m1s
-orders-mongo-deployment-56f88ccf79-hknr2       1/1     Running   0          6m1s
-tickets-deployment-58874789d4-vv9fc            1/1     Running   0          6m1s
-tickets-mongo-deployment-5f4956cd4c-bmj69      1/1     Running   0          6m1s
-
+auth-deployment-84bffc5564-cjqzt               1/1     Running   0          64s
+auth-mongo-deployment-57db5fc46f-9g7wh         1/1     Running   0          64s
+client-deployment-77f9896bdb-zdwwg             1/1     Running   0          64s
+expiration-deployment-69b678458d-l5w2p         1/1     Running   0          63s
+expiration-redis-deployment-777554b4f8-vkttt   1/1     Running   0          63s
+nats-deployment-6486d9669f-lmv8p               1/1     Running   0          63s
+orders-deployment-765c6cfc5b-kcjpr             1/1     Running   0          63s
+orders-mongo-deployment-5997f95f7f-hzf4l       1/1     Running   0          63s
+payments-deployment-bff95d98c-qv6w4            1/1     Running   0          63s
+payments-mongo-deployment-7ccdb6f6c9-tqlzk     1/1     Running   0          63s
+tickets-deployment-79b9854cdf-5d8ld            1/1     Running   0          63s
+tickets-mongo-deployment-545dc7d7c5-md59k      1/1     Running   0          63s
 ```
 
 <br/>

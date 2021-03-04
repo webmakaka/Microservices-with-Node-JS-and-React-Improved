@@ -30,7 +30,28 @@ $ kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=<STRIPE_
 
     $ cd payments
     $ npm update @webmak/microservices-common
+
+<br/>
+
+Need to add <YOUR_STRIPE_PRIVATE_SECRET> for tests to file
+
+<br/>
+
+payments/src/test/setup.ts
+
+<br/>
+
     $ npm run test
+
+<br/>
+
+```
+Test Suites: 3 passed, 3 total
+Tests:       8 passed, 8 total
+Snapshots:   0 total
+Time:        15.825 s
+Ran all test suites.
+```
 
 <br/>
 
