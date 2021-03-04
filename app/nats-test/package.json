@@ -15,7 +15,7 @@
     "@webmak/microservices-common": "^1.0.6",
     "node-nats-streaming": "^0.3.2",
     "ts-node-dev": "^1.1.6",
-    "typescript": "^4.2.2"
+    "typescript": "^4.2.3"
   },
   "volta": {
     "node": "14.16.0",
