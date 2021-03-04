@@ -52,3 +52,11 @@ updates:
     directory: '/app/expiration/'
     schedule:
       interval: 'daily'
+  - package-ecosystem: 'npm'
+    directory: '/app/payments/'
+    schedule:
+      interval: 'daily'
+  - package-ecosystem: 'docker'
+    directory: '/app/payments/'
+    schedule:
+      interval: 'daily'

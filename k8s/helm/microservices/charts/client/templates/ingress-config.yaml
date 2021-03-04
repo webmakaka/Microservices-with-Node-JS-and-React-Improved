@@ -10,10 +10,13 @@ spec:
     - host: ticketing.dev
       http:
         paths:
-          # - path: /api/payments/?(.*)
-          #   backend:
-          #     serviceName: payments-svc
-          #     servicePort: 3000
+          - path: /api/payments/?(.*)
+            pathType: 'Prefix'
+            backend:
+              service:
+                name: payments-svc
+                port:
+                  number: 3000
           - path: /api/users/?(.*)
             pathType: 'Prefix'
             backend:

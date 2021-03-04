@@ -1,5 +1,6 @@
 import { app } from 'app';
 import { ExpirationCompleteListener } from 'events/listeners/ExpirationCompleteListener';
+import { PaymentCreatedListener } from 'events/listeners/PaymentCreatedListener';
 import { TicketCreatedListener } from 'events/listeners/TicketCreatedListener';
 import { TicketUpdatedListener } from 'events/listeners/TicketUpdatedListener';
 import mongoose from 'mongoose';
@@ -34,7 +35,7 @@ const start = async () => {
     );
 
     natsWrapper.client.on('close', () => {
-      console.log('NATS connection closed!');
+      console.log('[Orders] NATS connection closed!');
       process.exit();
     });
 
@@ -44,6 +45,7 @@ const start = async () => {
     new TicketCreatedListener(natsWrapper.client).listen();
     new TicketUpdatedListener(natsWrapper.client).listen();
     new ExpirationCompleteListener(natsWrapper.client).listen();
+    new PaymentCreatedListener(natsWrapper.client).listen();
 
     await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
@@ -51,14 +53,14 @@ const start = async () => {
       useCreateIndex: true,
     });
 
-    console.log('Connected to MongoDB');
+    console.log('[Orders] Connected to MongoDB');
   } catch (err) {
     console.log(err);
   }
 };
 
 app.listen(3000, () => {
-  console.log('Listening on port 3000');
+  console.log('[Orders] Listening on port 3000');
 });
 
 start();

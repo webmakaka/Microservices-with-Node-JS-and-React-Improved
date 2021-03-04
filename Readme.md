@@ -89,21 +89,24 @@ $ {
 $ kubectl create secret generic jwt-secret --from-literal=JWT_KEY=MY_JWT_SECRET
 ```
 
-<!--
+<br/>
 
-    // <STRIPE_SECRET_KEY> from stripe.com
-    $ kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=<STRIPE_SECRET_KEY>
+stripe.com
+
+Developers --> API keys
 
 <br/>
 
-
--->
+```
+// <STRIPE_SECRET_KEY> from stripe.com
+$ kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=<STRIPE_SECRET_KEY>
+```
 
 <br/>
+
+**Need to update baseURL (Ingress HostName).**
 
 /app/client/src/api
-
-Need to update baseURL.
 
 <br/>
 
@@ -272,7 +275,20 @@ $ curl \
 
 <br/>
 
-### [Development](./Development.md)
+```
+// CREATE PAYMENT
+$ curl \
+    --insecure \
+    --cookie /tmp/cookies.txt \
+    --data '{"orderId":"5ec6c93f6c627e0023725faf", "token": "tok_visa"}' \
+    --header "Content-Type: application/json" \
+    --request POST https://ticketing.dev/api/payments/ \
+    | python -m json.tool
+```
+
+<br/>
+
+### [Development](./docs/Development.md)
 
 <br/>
 

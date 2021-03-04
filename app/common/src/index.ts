@@ -10,6 +10,7 @@ export * from 'events/ESubjects';
 export * from 'events/IExpirationCompleteEvent';
 export * from 'events/IOrderCancelledEvent';
 export * from 'events/IOrderCreatedEvent';
+export * from 'events/IPaymentCreatedEvent';
 export * from 'events/ITicketCreatedEvent';
 export * from 'events/ITicketUpdatedEvent';
 export * from 'events/types/EOrderStatus';

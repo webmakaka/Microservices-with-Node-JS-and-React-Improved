@@ -16,6 +16,8 @@
 
 ### [Expiration Service](./07-expiration-service.md)
 
+### [Payments Service](./08-payments-service.md)
+
 <br/>
 
 ---

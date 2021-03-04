@@ -46,14 +46,14 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    # - image: webmakaka/microservices-payments
-    #   context: ../app/payments
-    #   docker:
-    #     dockerfile: Dockerfile
-    #   sync:
-    #     manual:
-    #       - src: 'src/**/*.ts'
-    #         dest: .
+    - image: webmakaka/microservices-payments
+      context: ../app/payments
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
 # deploy:
 #   helm:
 #     releases:
@@ -79,3 +79,4 @@ deploy:
       - ../k8s/helm/microservices/charts/nats/templates/*
       - ../k8s/helm/microservices/charts/orders/templates/*
       - ../k8s/helm/microservices/charts/expiration/templates/*
+      - ../k8s/helm/microservices/charts/payments/templates/*

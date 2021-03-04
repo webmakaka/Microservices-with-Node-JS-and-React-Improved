@@ -1,6 +1,6 @@
 {
   "name": "@webmak/microservices-common",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "microservices-common",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
