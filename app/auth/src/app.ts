@@ -4,6 +4,7 @@ import cookieSession from 'cookie-session';
 import express, { Request, Response } from 'express';
 import 'express-async-errors';
 import { currentUserRouter } from 'routes/current-user';
+import { metricsRouter } from 'routes/metrics';
 import { signinRouter } from 'routes/signin';
 import { signoutRouter } from 'routes/signout';
 import { signupRouter } from 'routes/signup';
@@ -18,6 +19,7 @@ app.use(
   })
 );
 
+app.use(metricsRouter);
 app.use(currentUserRouter);
 app.use(signinRouter);
 app.use(signoutRouter);
