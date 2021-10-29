@@ -138,7 +138,7 @@ baseURL should looks like:
 
 <br/>
 
-(more details)[./02-client-service.md]
+[more details](./docs/02-client-service.md)
 
 <br/>
 
