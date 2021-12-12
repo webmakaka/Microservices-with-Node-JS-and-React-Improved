@@ -32,8 +32,9 @@ $ curl \
     --cookie-jar /tmp/cookies.txt \
     --data '{"email":"marley@example.com", "password":"123456789"}' \
     --header "Content-Type: application/json" \
-    --request POST https://ticketing.dev/api/users/signup \
-    | python -m json.tool
+    --request POST \
+    --url https://ticketing.dev/api/users/signup \
+    | jq
 ```
 
 <br/>
@@ -43,8 +44,9 @@ $ curl \
 $ curl \
     --data '{"email":"marley@example.com", "password":"123456789"}' \
     --header "Content-Type: application/json" \
-    --request POST http://ticketing.dev/api/users/signin \
-    | python -m json.tool
+    --request POST \
+    --url http://ticketing.dev/api/users/signin \
+    | jq
 ```
 
 <br/>
@@ -55,8 +57,9 @@ $ curl \
     --insecure \
     --cookie /tmp/cookies.txt \
     --header "Content-Type: application/json" \
-    --request GET https://ticketing.dev/api/users/currentuser \
-    | python -m json.tool
+    --request GET \
+    --url https://ticketing.dev/api/users/currentuser \
+    | jq
 ```
 
 <br/>
@@ -68,8 +71,9 @@ $ curl \
     --cookie /tmp/cookies.txt \
     --data '{"title":"concert", "price":10}' \
     --header "Content-Type: application/json" \
-    --request POST https://ticketing.dev/api/tickets \
-    | python -m json.tool
+    --request POST \
+    --url https://ticketing.dev/api/tickets \
+    | jq
 ```
 
 <br/>
@@ -93,8 +97,9 @@ $ curl \
 $ curl \
     --insecure \
     --header "Content-Type: application/json" \
-    --request GET https://ticketing.dev/api/tickets/6037eaacbcc4a0001acb6d50 \
-    | python -m json.tool
+    --request GET \
+    --url https://ticketing.dev/api/tickets/6037eaacbcc4a0001acb6d50 \
+    | jq
 ```
 
 <br/>
@@ -118,8 +123,9 @@ $ curl \
 $ curl \
     --insecure \
     --header "Content-Type: application/json" \
-    --request GET https://ticketing.dev/api/tickets/ \
-    | python -m json.tool
+    --request GET \
+    --url https://ticketing.dev/api/tickets/ \
+    | jq
 ```
 
 <br/>
@@ -131,8 +137,9 @@ $ curl \
     --cookie /tmp/cookies.txt \
     --data '{"title":"new concert", "price":100}' \
     --header "Content-Type: application/json" \
-    --request PUT https://ticketing.dev/api/tickets/603b0e8036b9f80019154277 \
-    | python -m json.tool
+    --request PUT \
+    --url https://ticketing.dev/api/tickets/603b0e8036b9f80019154277 \
+    | jq
 ```
 
 <br/>

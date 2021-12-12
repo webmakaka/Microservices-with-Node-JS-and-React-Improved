@@ -55,8 +55,9 @@ OK!
 $ curl \
     --data '{"email":"notValidEmail", "password":"1"}' \
     --header "Content-Type: application/json" \
-    --request POST http://ticketing.dev/api/users/signup \
-    | python -m json.tool
+    --request POST \
+    --url http://ticketing.dev/api/users/signup \
+    | jq
 ```
 
 <br/>
@@ -110,8 +111,9 @@ $ curl \
     --data '{
         "email":"marley@example.com", "password":"123456789"}' \
     --header "Content-Type: application/json" \
-    --request POST http://ticketing.dev/api/users/signup \
-    | python -m json.tool
+    --request POST \
+    --url http://ticketing.dev/api/users/signup \
+    | jq
 ```
 
 <br/>
@@ -149,8 +151,9 @@ $ curl \
         }' \
     --cookie-jar /tmp/cookies.txt \
     --header "Content-Type: application/json" \
-    --request POST https://ticketing.dev/api/users/signup \
-    | python -m json.tool
+    --request POST \
+    --url https://ticketing.dev/api/users/signup \
+    | jq
 ```
 
 <br/>
@@ -207,8 +210,9 @@ $ curl \
         "email":"marley1@example.com", "password":"123456789"}
     ' \
     --header "Content-Type: application/json" \
-    --request POST https://ticketing.dev/api/users/signup \
-    | python -m json.tool
+    --request POST \
+    --url https://ticketing.dev/api/users/signup \
+    | jq
 ```
 
 <br/>
@@ -221,8 +225,9 @@ $ curl \
         "email":"marley1@example.com", "password":"123456789"
     }' \
     --header "Content-Type: application/json" \
-    --request POST http://ticketing.dev/api/users/signin \
-    | python -m json.tool
+    --request POST \
+    --url http://ticketing.dev/api/users/signin \
+    | jq
 ```
 
 <br/>
@@ -233,8 +238,9 @@ $ curl \
     --insecure \
     --cookie /tmp/cookies.txt \
     --header "Content-Type: application/json" \
-    --request GET https://ticketing.dev/api/users/currentuser \
-    | python -m json.tool
+    --request GET \
+    --url https://ticketing.dev/api/users/currentuser \
+    | jq
 ```
 
 <br/>

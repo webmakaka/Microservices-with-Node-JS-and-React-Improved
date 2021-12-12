@@ -18,6 +18,12 @@ Minikube, Kubectl, Docker, Skaffold should be installed.
 
 <br/>
 
+```
+$ sudo apt install -y jq
+```
+
+<br/>
+
 ### Minikube setup
 
 ```
@@ -44,28 +50,41 @@ $ curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaf
 
 ### Run minikube
 
+<br/>
+
+```
+$ export \
+    PROFILE=microservices-with-nodejs-and-react \
+    MEMORY=8192 \
+    CPUS=4 \
+    DRIVER=docker \
+    KUBERNETES_VERSION=v1.22.4
+```
+
+<br/>
+
 ```
 $ {
-    minikube --profile microservices-with-nodejs-and-react config set memory 8192
-    minikube --profile microservices-with-nodejs-and-react config set cpus 4
-    minikube --profile microservices-with-nodejs-and-react config set disk-size 20g
+    minikube --profile ${PROFILE} config set memory ${MEMORY}
+    minikube --profile ${PROFILE} config set cpus ${CPUS}
+    minikube --profile ${PROFILE} config set disk-size 20g
 
-    // minikube --profile microservices-with-nodejs-and-react config set vm-driver virtualbox
-    minikube --profile microservices-with-nodejs-and-react config set vm-driver docker
+    minikube --profile ${PROFILE} config set vm-driver ${DRIVER}
 
-    minikube --profile microservices-with-nodejs-and-react config set kubernetes-version v1.20.4
-    minikube start --profile microservices-with-nodejs-and-react --embed-certs
+    minikube --profile ${PROFILE} config set kubernetes-version ${KUBERNETES_VERSION}
+    minikube start --profile ${PROFILE} --embed-certs
+
+    // Enable ingress
+    minikube addons --profile ${PROFILE} enable ingress
+
+    // Enable registry
+    // minikube addons --profile ${PROFILE} enable registry
 }
 ```
 
 <br/>
 
-    // Enable ingress
-    $ minikube addons --profile microservices-with-nodejs-and-react enable ingress
-
-<br/>
-
-    $ minikube --profile microservices-with-nodejs-and-react ip
+    $ minikube --profile ${PROFILE} ip
     192.168.49.2
 
 <br/>
@@ -117,6 +136,7 @@ Set your **stripeKey** (stripe public key) instead mine.
 <br/>
 
 ```
+// It will show after skaffold starts
 $ kubectl get ingress
 NAME          CLASS    HOSTS           ADDRESS        PORTS   AGE
 ingress-svc   <none>   ticketing.dev   192.168.49.2   80      8m41s
@@ -192,8 +212,9 @@ $ curl \
     --cookie-jar /tmp/cookies.txt \
     --data '{"email":"marley@example.com", "password":"123456789"}' \
     --header "Content-Type: application/json" \
-    --request POST https://ticketing.dev/api/users/signup \
-    | python -m json.tool
+    --request POST \
+    --url https://ticketing.dev/api/users/signup \
+    | jq
 ```
 
 <br/>
@@ -203,8 +224,9 @@ $ curl \
 $ curl \
     --data '{"email":"marley@example.com", "password":"123456789"}' \
     --header "Content-Type: application/json" \
-    --request POST http://ticketing.dev/api/users/signin \
-    | python -m json.tool
+    --request POST \
+    --url http://ticketing.dev/api/users/signin \
+    | jq
 ```
 
 <br/>
@@ -215,8 +237,9 @@ $ curl \
     --insecure \
     --cookie /tmp/cookies.txt \
     --header "Content-Type: application/json" \
-    --request GET https://ticketing.dev/api/users/currentuser \
-    | python -m json.tool
+    --request GET \
+    --url https://ticketing.dev/api/users/currentuser \
+    | jq
 ```
 
 <br/>
@@ -228,19 +251,9 @@ $ curl \
     --cookie /tmp/cookies.txt \
     --data '{"title":"concert", "price":10}' \
     --header "Content-Type: application/json" \
-    --request POST https://ticketing.dev/api/tickets \
-    | python -m json.tool
-```
-
-<br/>
-
-```
-// GET TICKET
-$ curl \
-    --insecure \
-    --header "Content-Type: application/json" \
-    --request GET https://ticketing.dev/api/tickets/6037eaacbcc4a0001acb6d50 \
-    | python -m json.tool
+    --request POST \
+    --url https://ticketing.dev/api/tickets \
+    | jq
 ```
 
 <br/>
@@ -250,8 +263,21 @@ $ curl \
 $ curl \
     --insecure \
     --header "Content-Type: application/json" \
-    --request GET https://ticketing.dev/api/tickets/ \
-    | python -m json.tool
+    --request GET \
+    --url https://ticketing.dev/api/tickets/ \
+    | jq
+```
+
+<br/>
+
+```
+// GET TICKET
+$ curl \
+    --insecure \
+    --header "Content-Type: application/json" \
+    --request GET \
+    --url https://ticketing.dev/api/tickets/6037eaacbcc4a0001acb6d50 \
+    | jq
 ```
 
 <br/>
@@ -263,8 +289,9 @@ $ curl \
     --cookie /tmp/cookies.txt \
     --data '{"title":"new concert", "price":100}' \
     --header "Content-Type: application/json" \
-    --request PUT https://ticketing.dev/api/tickets/603b0e8036b9f80019154277 \
-    | python -m json.tool
+    --request PUT \
+    --url https://ticketing.dev/api/tickets/603b0e8036b9f80019154277 \
+    | jq
 ```
 
 <br/>
@@ -276,8 +303,9 @@ $ curl \
     --cookie /tmp/cookies.txt \
     --data '{"ticketId":"604150ce9a43b7001a54b720"}' \
     --header "Content-Type: application/json" \
-    --request POST https://ticketing.dev/api/orders \
-    | python -m json.tool
+    --request POST \
+    --url https://ticketing.dev/api/orders \
+    | jq
 ```
 
 <br/>
@@ -288,8 +316,9 @@ $ curl \
     --insecure \
     --cookie /tmp/cookies.txt \
     --header "Content-Type: application/json" \
-    --request GET https://ticketing.dev/api/orders \
-    | python -m json.tool
+    --request GET \
+    --url https://ticketing.dev/api/orders \
+    | jq
 ```
 
 <br/>
@@ -300,8 +329,9 @@ $ curl \
     --insecure \
     --cookie /tmp/cookies.txt \
     --header "Content-Type: application/json" \
-    --request GET https://ticketing.dev/api/orders/604150e7d42b880019802e99 \
-    | python -m json.tool
+    --request GET \
+    --url https://ticketing.dev/api/orders/604150e7d42b880019802e99 \
+    | jq
 ```
 
 <br/>
@@ -313,8 +343,9 @@ $ curl \
     --cookie /tmp/cookies.txt \
     --data '{"orderId":"5ec6c93f6c627e0023725faf", "token": "tok_visa"}' \
     --header "Content-Type: application/json" \
-    --request POST https://ticketing.dev/api/payments/ \
-    | python -m json.tool
+    --request POST \
+    --url https://ticketing.dev/api/payments/ \
+    | jq
 ```
 
 <br/>
